@@ -86,7 +86,7 @@ You can use the `IsProtected` property to toggle protection on or off:
 | Unprotected content | Content protected |
 |---------------------|:-----------------:|
 | `<privacyglass:PrivacyGlassView IsProtected="False">`| `<privacyglass:PrivacyGlassView IsProtected="True"> `|
-| <img src="iAssets/mage.png" alt="content not protected" width="805" height="155" /> | <img src="Assets/image-1.png" alt="content protected" width="805" height="155" /> |
+| <img src="Assets/image.png" alt="content not protected" width="805" height="155" /> | <img src="Assets/image-1.png" alt="content protected" width="805" height="155" /> |
 
 ---
 If you have multiple instances of the `PrivacyGlassView` on your page and want to toggle all at once, you can inject the `IPrivacyGlass` interface into your view and call the `TogglePrivacyGlass` method to toggle protection on or off.
