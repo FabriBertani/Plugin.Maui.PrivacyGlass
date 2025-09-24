@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:privacyglass="clr-namespace:Plugin.Maui.PrivacyGlass.Controls;assembly=Plugin.Maui.PrivacyGlass"
+    x:Class="PrivacyGlassSample.MainPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <privacyglass:PrivacyGlassView
+                x:Name="privacyGlassView"
+                IsProtected="True">
+                <VerticalStackLayout>
+                    <Label
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="WordWrap"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        Text="Very sensitive information!" />
+                    <Label
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="WordWrap"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        TextColor="Red"
+                        Text="DO NOT SHARE!" />
+                </VerticalStackLayout>
+            </privacyglass:PrivacyGlassView>
+
+            <Button
+                Text="Show/Hide Sensitive Information"
+                Clicked="ShowHideSensitiveInformation_Clicked" />
+
+            <Label
+                FontSize="Title"
+                FontAttributes="Bold"
+                Text="Important Banking Details" />
+            <HorizontalStackLayout
+                Spacing="10">
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="ToogleBankAccountDetails_Tapped" />
+                </HorizontalStackLayout.GestureRecognizers>
+                <Label
+                    x:Name="ToogleBankAccountDetailsLabel"
+                    VerticalOptions="Center"
+                    FontSize="Medium"
+                    Text="Hide" />
+                <Image
+                    x:Name="ToogleBankAccountDetailsImage"
+                    Source="ic_eye_off"
+                    Aspect="AspectFit" />
+            </HorizontalStackLayout>
+            <Grid
+                RowDefinitions="Auto, Auto"
+                ColumnDefinitions="Auto, *"
+                ColumnSpacing="10">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text="Balance:" />
+                <privacyglass:PrivacyGlassView
+                    x:Name="BalancePrivacyGlassView"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    IsProtected="False">
+                    <Label
+                        FontSize="Medium"
+                        Text="$1.000" />
+                </privacyglass:PrivacyGlassView>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text="Savings:" />
+                <privacyglass:PrivacyGlassView
+                    x:Name="SavingsPrivacyGlassView"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    IsProtected="False">
+                    <Label
+                        FontSize="Medium"
+                        Text="$6,322.26" />
+                </privacyglass:PrivacyGlassView>
+            </Grid>
+
+            <Button
+                Text="Show/Hide All"
+                Clicked="ShowHideAll_Clicked" />
+
+            <Border
+                StrokeThickness="2"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 20"
+                Padding="5">
+                <Grid>
+                    <privacyglass:PrivacyGlassView
+                        IsProtected="True"
+                        KeepScreenOn="True">
+                        <Label
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="WordWrap"
+                            FontSize="Medium"
+                            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In metus leo, pellentesque vitae neque nec, aliquet efficitur lacus. Integer rutrum orci id leo ultricies, vel feugiat eros commodo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean velit mi, viverra quis faucibus eu, volutpat eget augue. Proin congue, est porttitor varius faucibus, neque lectus commodo turpis, ut ornare nisl odio non quam." />
+                    </privacyglass:PrivacyGlassView>
+                    <Label
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        FontSize="Large"
+                        Text="Subscribe to unlock!" />
+                </Grid>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
