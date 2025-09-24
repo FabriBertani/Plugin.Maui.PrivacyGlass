@@ -1,6 +1,4 @@
-<p align="center">
-    <img src="Assets/plugin.maui.privacyglass_128x128.png" />
-</p>
+![](Assets/plugin.maui.privacyglass_128x128.png)
 
 # Plugin.Maui.PrivacyGlass
 [![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.PrivacyGlass.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.PrivacyGlass) [![NuGet Downloads](https://img.shields.io/nuget/dt/Plugin.Maui.PrivacyGlass)](https://www.nuget.org/packages/Plugin.Maui.PrivacyGlass/#versions-body-tab) [![Buy Me a Coffee](https://img.shields.io/badge/support-buy%20me%20a%20coffee-FFDD00)](https://buymeacoffee.com/fabribertani)
@@ -86,7 +84,7 @@ You can use the `IsProtected` property to toggle protection on or off:
 | Unprotected content | Content protected |
 |---------------------|:-----------------:|
 | `<privacyglass:PrivacyGlassView IsProtected="False">`| `<privacyglass:PrivacyGlassView IsProtected="True"> `|
-| <img src="Assets/image.png" alt="content not protected" width="805" height="155" /> | <img src="Assets/image-1.png" alt="content protected" width="805" height="155" /> |
+| ![content not protected](Assets/image.png) | ![content protected](Assets/image-1.png) |
 
 ---
 If you have multiple instances of the `PrivacyGlassView` on your page and want to toggle all at once, you can inject the `IPrivacyGlass` interface into your view and call the `TogglePrivacyGlass` method to toggle protection on or off.
@@ -111,7 +109,7 @@ private void ShowHideAll_Clicked(object? sender, EventArgs e)
 ```
 | Multiple unprotected content | Multiple content protected |
 |-------------------|:------------------:|
-| <img src="Assets/image-2.png" alt="multiple content not protected" width="830" height="345" /> | <img src="Assets/image-3.png" alt="multiple content protected" width="830" height="345" /> |
+| ![multiple content not protected](Assets/image-2.png) | ![multiple content protected](Assets/image-3.png) |
 
 ---
 Imagine you want to protect something behind a paywall or keep content secret until a user action. You can also add `KeepScreenOn="True"` to the `PrivacyGlassView` to prevent it from being affected by calls to the `TogglePrivacyGlass` method from `IPrivacyGlass`:
@@ -136,7 +134,7 @@ Imagine you want to protect something behind a paywall or keep content secret un
     </Grid>
 </Border>
 ```
-<img src="Assets/image-4.png" alt="super secret protected content" width="410" height="330" />
+![super secret protected content](Assets/image-4.png)
 
 ## Sample
 Take a look at the [PrivacyGlassSample](https://github.com/FabriBertani/Plugin.Maui.PrivacyGlass/tree/main/samples/PrivacyGlassSample) for a detailed implementation of this plugin.
